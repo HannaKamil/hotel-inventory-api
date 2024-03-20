@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Reply;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -19,7 +20,9 @@ class HotelController extends Controller
         // Apply sorting
         $sortedHotels = $this->sortHotels($filteredHotels, $request);
 
-        return response()->json($sortedHotels);
+        // Return the sorted hotels using the Reply helper class
+        return Reply::message($sortedHotels, 'Hotels fetched successfully', true, 200);
+
     }
 
     private function filterHotels($hotels, $request)
