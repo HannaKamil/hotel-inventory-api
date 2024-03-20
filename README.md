@@ -57,10 +57,6 @@ http://localhost:8000/api/hotels?hotel_name=Hotel&city=dubai&price_range=100:200
 
 To sort hotels by name or price in ascending or descending order, use the following endpoints:
 
-## Sort Hotels
-
-Sort hotels by name or price in ascending or descending order.
-
 ### Sort by Name:
 
 - **Descending Order:**
