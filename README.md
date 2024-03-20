@@ -1,7 +1,5 @@
-
-
-```markdown
-# Project Name
+ 
+# Hotels API
 
 ## Clone Laravel Project:
 
@@ -9,7 +7,7 @@ Follow these steps to clone and set up the Laravel project:
 
 1. **Clone the Laravel project repository:**
    ```bash
-   git clone https://github.com/HannaKamil/hotels-api.git
+   git clone https://github.com/HannaKamil/hotel-inventory-api.git
    ```
 
 2. **Navigate to the project directory:**
@@ -34,6 +32,11 @@ Follow these steps to clone and set up the Laravel project:
    php artisan key:generate
    ```
 
+5. **Run the project:**
+   ```bash
+   php artisan serve
+   ```
+
 ## Search Hotels:
 
 To search for hotels with specific criteria, use the following endpoint:
@@ -45,8 +48,7 @@ To search for hotels with specific criteria, use the following endpoint:
 - `city`: Destination city (optional)
 - `price_range`: Price range (optional)
 - `date_range`: Date range (optional)
-- `sort_by`: Sorting criteria (optional, default: name)
-- `sort_order`: Sorting order (optional, default: asc)
+
 
 **Example:**
 http://localhost:8000/api/hotels?hotel_name=Hotel&city=dubai&price_range=100:200&date_range=2023-10-10:2023-10-15
@@ -55,11 +57,24 @@ http://localhost:8000/api/hotels?hotel_name=Hotel&city=dubai&price_range=100:200
 
 To sort hotels by name or price in ascending or descending order, use the following endpoints:
 
-- **Sort by name (descending):**
-    - **GET** http://localhost:8000/api/hotels?sort_by=name&sort_order=desc
+## Sort Hotels
 
-- **Sort by price (descending):**
+Sort hotels by name or price in ascending or descending order.
+
+### Sort by Name:
+
+- **Descending Order:**
+    - **GET** http://localhost:8000/api/hotels?sort_by=name&sort_order=desc
+- **Ascending Order:**
+    - **GET** http://localhost:8000/api/hotels?sort_by=name&sort_order=asc
+
+### Sort by Price:
+
+- **Descending Order:**
     - **GET** http://localhost:8000/api/hotels?sort_by=price&sort_order=desc
+- **Ascending Order:**
+    - **GET** http://localhost:8000/api/hotels?sort_by=price&sort_order=asc
+
 
 ## Run Tests:
 
